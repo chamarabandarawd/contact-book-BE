@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
-
+@CrossOrigin
 public class contactController {
 
     ConcurrentHashMap<String, Contact> contacts=new ConcurrentHashMap<String, Contact>();
@@ -26,6 +26,7 @@ public class contactController {
 
     @PostMapping("/")
     public  Contact addContact(@RequestBody Contact contact){
+        System.out.println(contact);
         contacts.put(contact.getId(),contact);
         return contact;
 
